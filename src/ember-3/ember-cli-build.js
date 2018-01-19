@@ -13,7 +13,7 @@ module.exports = function(defaults) {
 
   app.import('node_modules/single-spa-ember/amd/single-spa-ember.js', {
     using: [
-      {transformation: 'amd', as: 'single-spa-ember'},
+      { transformation: 'amd', as: 'single-spa-ember' },
     ]
   });
 
