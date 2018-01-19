@@ -67,6 +67,9 @@ function menuItems() {
       <li>
           <a onClick={() => this.navigateTo("/ember-1")}>Ember 1</a>
       </li>
+        <li>
+            <a onClick={() => this.navigateTo("/ember-2")}>Ember 2</a>
+        </li>
       <li>
           <a onClick={() => this.navigateTo("/ember-3/")}>Ember 3</a>
       </li>
