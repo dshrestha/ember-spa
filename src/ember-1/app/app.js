@@ -2,8 +2,8 @@ import Ember from 'ember';
 import Resolver from 'ember/resolver';
 import loadInitializers from 'ember/load-initializers';
 import config from './config/environment';
-//import singleSpaEmber from 'single-spa-ember';
-import { singleSpaEmber as spe } from 'single-spa-ember';
+import singleSpaEmber from 'single-spa-ember';
+
 var App;
 
 Ember.MODEL_FACTORY_INJECTIONS = true;
@@ -20,7 +20,7 @@ export default App;
 
 
 // Single-spa configuration and lifecycles
-const emberLifecycles = spe({
+const emberLifecycles = singleSpaEmber({
   App,
   appName: 'ember-1',
   createOpts: {
