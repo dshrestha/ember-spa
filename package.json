@@ -5,9 +5,9 @@
     "start": "webpack-dev-server",
     "build": "rimraf build && yarn build-ember-1 && yarn build-ember-2 && yarn build-ember-3 && yarn build-vanilla && yarn build-webpack",
     "build-webpack": "webpack --config webpack.config.js",
-    "build-ember-1": "mv .babelrc tmp/ && cd src/ember-1 && npm install && bower install && ./node_modules/.bin/ember build --output-path ../../build/ember-1/ && cd ../.. && mv tmp/.babelrc ./",
-    "build-ember-2": "cd src/ember-2 && npm install && bower install && ./node_modules/.bin/ember build --output-path ../../build/ember-2/ && cd ../..",
-    "build-ember-3": "cd src/ember-3 && npm install && ./node_modules/.bin/ember build --output-path ../../build/ember-3/ && cd ../..",
+    "build-ember-1": "mv .babelrc tmp/ && cd src/ember-1 && rm -rf node_modules && rm -rf bower_components && npm install && bower install && ./node_modules/.bin/ember build --output-path ../../build/ember-1/ && cd ../.. && mv tmp/.babelrc ./",
+    "build-ember-2": "cd src/ember-2 && rm -rf node_modules && rm -rf bower_components && npm install && bower install && ./node_modules/.bin/ember build --output-path ../../build/ember-2/ && cd ../..",
+    "build-ember-3": "cd src/ember-3 && rm -rf node_modules && rm -rf bower_components && npm install && ./node_modules/.bin/ember build --output-path ../../build/ember-3/ && cd ../..",
     "build-vanilla": "cpx \"src/vanillajs/**\" build/vanillajs && cpx \"node_modules/todomvc-app-css/*\" build/todomvc-app-css && cpx \"node_modules/todomvc-common/*\" build/todomvc-common"
   },
   "repository": {

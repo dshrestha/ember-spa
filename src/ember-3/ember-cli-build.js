@@ -2,7 +2,7 @@
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
-module.exports = function(defaults) {
+module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
     autoRun: false,
     storeConfigInMeta: false,
@@ -14,7 +14,7 @@ module.exports = function(defaults) {
   app.import('node_modules/single-spa-ember/amd/single-spa-ember.js', {
     using: [
       { transformation: 'amd', as: 'single-spa-ember' },
-    ]
+    ],
   });
 
   // Use `app.import` to add additional libraries to the generated
