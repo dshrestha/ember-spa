@@ -2,8 +2,8 @@ import Application from '@ember/application';
 import Resolver from './resolver';
 import loadInitializers from 'ember-load-initializers';
 import config from './config/environment';
-import singleSpaEmber from 'single-spa-ember';
-//import Ember from "ember";
+import singleSpaEmber from 'single-spa-ember/src/single-spa-ember';
+import $ from 'jquery';
 
 const App = Application.extend({
   modulePrefix: config.modulePrefix,
@@ -27,8 +27,18 @@ const emberLifecycles = singleSpaEmber({
 // Single-spa lifecycles.
 export const bootstrap = emberLifecycles.bootstrap;
 export const mount = emberLifecycles.mount;
-export const unmount = (()=>{
-  return emberLifecycles.unmount().then(()=>{
-    //delete Ember.Inflector;
+export const unmount = (() => {
+
+  let appName = 'ember-3';
+  let scriptsToRemove = ['/build/' + appName + '/assets/vendor.js', '/build/' + appName + '/assets/' + appName + '.js'];
+
+  $('script').each(function (index, script) {
+    if (scriptsToRemove.indexOf($(script).attr("src")) !== -1) {
+      $(script).remove();
+    }
+  });
+
+  return emberLifecycles.unmount().then(() => {
+
   });
 });

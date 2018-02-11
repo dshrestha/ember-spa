@@ -73,6 +73,9 @@ function menuItems() {
       <li>
           <a onClick={() => this.navigateTo("/ember-3/")}>Ember 3</a>
       </li>
+        <li>
+            <a onClick={() => this.navigateTo("/ember-4/")}>Ember 4</a>
+        </li>
     </div>
   )
 }

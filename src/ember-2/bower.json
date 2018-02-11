@@ -15,6 +15,6 @@
     "tests"
   ],
   "dependencies": {
-    "single-spa-ember": "^0.1.6"
+    "single-spa-ember": "^0.2.0"
   }
 }
